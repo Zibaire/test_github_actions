@@ -4,13 +4,11 @@ on:
     types: [opened]
 
 jobs:
-  create-release-branch:
-    name: "create release branch"
+  create_issue_branch_job:
     runs-on: ubuntu-latest
     steps:
       - name: Create Issue Branch
         uses: robvanderleek/create-issue-branch@main
-        id: create-issue-branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Echo branch name
